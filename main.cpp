@@ -27,34 +27,35 @@ void problema2(){
     int a;
 
     int c=50000;
-    int i=1;
+    int i=0;
     int res=3;
     int y=10000;
 
     cout<<"ingrese numero entero : ";
     cin>>a;
-    for(int t=8;t>=0;t--){
+    for(int t=9;t>=0;t--){
 
-    if(a>c){
-        cout<<c<<": "<<a/c<<endl;
-        a=a-(c*(a/c));
+        if(i>=3){
+            y=y/10;
+            i=0;
+            res=3;
+            c=c/2;
+        }
+        else if(i>=1 and i<3){
+            res=res-2;
+        }
 
-    }
-    else{
-    cout<<c<<": "<<0<<endl;
-    }
+        if(a>c){
+            cout<<c<<": "<<a/c<<endl;
+            a=a-(c*(a/c));
 
-    c=c-(res*y);
-    res=res-1;
-    //cout<<i<<","<<res;
-    i++;
-    cout<<res<<endl;
-    if(i>=3){
-        c=c/2;
-        y=y/10;
-        i=1;
-        res=3;
+        }
+        else{
+            cout<<c<<": "<<0<<endl;
+        }
+        i++;
+        if(i!=3)
+            c=c-(res*y);
     }
-
-    }
+    cout<<"Faltante: "<<a<<endl;
 }
