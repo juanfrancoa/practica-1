@@ -3,11 +3,13 @@
 using namespace std;
 void problema1();
 void problema2();
+void problema3();
 
 int main()
 {
     //problema1();
-    problema2();
+    //problema2();
+    problema3();
     return 0;
 }
 void problema1(){
@@ -58,4 +60,58 @@ void problema2(){
             c=c-(res*y);
     }
     cout<<"Faltante: "<<a<<endl;
+}
+void problema3(){
+    int a;
+    cout<<"Ingrese numero del mes: ";
+    cin>>a;
+    if(a>12 or a<=0)
+        cout<<a<<" es un mes invalido."<<endl;
+    else{
+        int b;
+        cout<<"Ingrese numero de dia del mes: ";
+        cin>>b;
+        if(a<=7){
+            if(a%2==0 and a!=2){
+                if(b>30 or b<=0){
+                    cout<<a<<"/"<<b<<" es una fecha invalida."<<endl;
+                }
+                else
+                    cout<<b<<"/"<<b<<" es una fecha valida."<<endl;
+
+                }
+            else if(a%2==1){
+                if(b>31 or b<=0)
+                    cout<<a<<"/"<<b<<" es una fecha invalida."<<endl;
+                else
+                    cout<<a<<"/"<<b<<" es una fecha valida."<<endl;
+            }
+            else if(a==2){
+                if(b==29)
+                    cout<<a<<"/"<<b<<" es valida es bisiesto."<<endl;
+                else if(b>0 and b<29)
+                    cout<<a<<"/"<<b<<" es una fecha valida."<<endl;
+                else
+                    cout<<a<<"/"<<b<<" es una fecha invalida."<<endl;
+            }
+            }
+        else{
+            if(a%2==0){
+                if(b>31 or b<=0)
+                    cout<<a<<"/"<<b<<" es una fecha invalida."<<endl;
+                else
+                    cout<<a<<"/"<<b<<" es una fecha valida."<<endl;
+            }
+            else{
+                if(b>30 or b<=0){
+                    cout<<a<<"/"<<b<<" es una fecha invalida."<<endl;
+                }
+                else
+                    cout<<b<<"/"<<b<<" es una fecha valida."<<endl;
+            }
+
+        }
+        }
+
+
 }
