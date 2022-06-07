@@ -4,12 +4,14 @@ using namespace std;
 void problema1();
 void problema2();
 void problema3();
+void problema4();
 
 int main()
 {
-    //problema1();
-    //problema2();
-    problema3();
+    /*problema1();
+    problema2();
+    problema3();*/
+    problema4();
     return 0;
 }
 void problema1(){
@@ -114,4 +116,32 @@ void problema3(){
         }
 
 
+}
+void problema4(){
+    int a;
+    cout<<"Ingrese hora: ";
+    cin>>a;
+    if(a%100>59 or a>2359 or a<0){
+        cout<<a<<" es un tiempo invalida."<<endl;
+    }
+    else{
+        int b;
+        cout<<"Ingrese segunda hora: ";
+        cin>>b;
+        if(b%100>59 or b>2359 or b<0){
+            cout<<b<<" es un tiempo invalida."<<endl;
+        }
+        else{
+            int d=b%100+a%100,c=b/100+a/100,e=0;
+            if(d>=60){
+                e=d/60;
+                d=d-60*e;
+                c=c+e;
+            }
+        if(d<10)
+            cout<<"La hora es "<<c<<":0"<<d<<endl;
+        else
+            cout<<"La hora es "<<c<<":"<<d<<endl;
+        }
+    }
 }
