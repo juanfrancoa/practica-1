@@ -5,13 +5,22 @@ void problema1();
 void problema2();
 void problema3();
 void problema4();
+void problema5();
+void problema6();
+unsigned long long int factorial(int a);
+void problema7();
+void problema8();
 
 int main()
 {
     /*problema1();
     problema2();
-    problema3();*/
+    problema3();
     problema4();
+    problema5();
+    problema6();
+    problema7();*/
+    problema8();
     return 0;
 }
 void problema1(){
@@ -144,4 +153,99 @@ void problema4(){
             cout<<"La hora es "<<c<<":"<<d<<endl;
         }
     }
+}
+void problema5(){
+    int t,y=1;
+    cout<<"Ingrese numero impar: ";
+    cin>>t;
+    for(int j=t/2;j>=0;j--)
+        {
+        for(int f=j;f>0;f--)
+            cout<<" ";
+        for(int g=1;g<=y;g++)
+            cout<<"*";
+         y+=2;
+         cout<<endl;
+        }
+    for(int j=1;j<=t/2;j++)
+        {
+        for(int f=1;f<=j;f++)
+            cout<<" ";
+        for(int g=t-(2*j);g>0;g--)
+            cout<<"*";
+        cout<<endl;
+        }
+}
+void problema6(){
+    int a;
+    cout<<"Ingrese numero natural: ";
+    cin>>a;
+    long double f=0.0;
+    long double g=0.0;
+    for(int e=0;e<a;e++){
+        g=factorial(e);
+        f=f+(1/g);
+    }
+    cout<<"e es aproximadamente: "<<f<<endl;
+
+}
+unsigned long long int factorial(int a){
+    unsigned long long int g=1;
+    if(a==0)
+        return 1;
+    else{
+        for(a;a>0;a--){
+            g*=a;
+        }
+        return g;
+    }
+}
+void problema7(){
+    int a=1,b=1,p=0,h=0,in;
+        cout<<"Ingrese numero : ";
+        cin>>in;
+        while(h<in)
+            {
+            h=a+b;
+            a=b;
+            b=h;
+            if(h%2==0 and h<in)
+            p=p+h;
+        }
+    cout<<"El resutado de la suma : "<<p<<endl;
+
+}
+void problema8(){
+    int a,b,c,d=0,e=1,f;
+        cout<<"Ingrese el primer numero : ";
+        cin>>a;
+        cout<<"Ingrese seguno numero : ";
+        cin>>b;
+        cout<<"Ingrese tercer numero : ";
+        cin>>c;
+        f=a;
+        while(f<c)
+            {
+            d+=f;
+            cout<<f;
+            e++;
+            f=a*e;
+            if(f<c)
+                cout<<"+";
+            }
+        a=f/e;
+        e=1;
+        f=b;
+        while(f<c)
+            {
+            if(f%a!=0)
+                {
+                d+=f;
+                cout<<"+"<<f;
+                }
+            e++;
+            f=b*e;
+            }
+        cout<<"="<<d<<endl;
+
 }
