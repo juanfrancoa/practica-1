@@ -10,6 +10,8 @@ void problema6();
 unsigned long long int factorial(int a);
 void problema7();
 void problema8();
+void problema9();
+int potencia(int a);
 
 int main()
 {
@@ -19,8 +21,9 @@ int main()
     problema4();
     problema5();
     problema6();
-    problema7();*/
-    problema8();
+    problema7();
+    problema8();*/
+    problema9();
     return 0;
 }
 void problema1(){
@@ -248,4 +251,28 @@ void problema8(){
             }
         cout<<"="<<d<<endl;
 
+}
+void problema9(){
+    int a,b=10,c=0,m=0;
+    cout<<"Ingrese numero entero positivo: ";
+    cin>>a;
+    while(a>b)
+        b*=10;
+    b/=10;
+    while(b>=1){
+        m=a/b;
+        c+=potencia(m);
+        a-=m*b;
+        b/=10;
+    }
+    cout<<"El resultado de la suma es: "<<c<<endl;
+}
+int potencia(int a){
+    int t=0;
+    int y=1;
+    while(t<a){
+        y*=a;
+        t++;
+    }
+    return y;
 }
