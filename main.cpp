@@ -12,6 +12,7 @@ void problema7();
 void problema8();
 void problema9();
 int potencia(int a);
+void problema10();
 
 int main()
 {
@@ -22,8 +23,9 @@ int main()
     problema5();
     problema6();
     problema7();
-    problema8();*/
-    problema9();
+    problema8();
+    problema9();*/
+    problema10();
     return 0;
 }
 void problema1(){
@@ -275,4 +277,24 @@ int potencia(int a){
         t++;
     }
     return y;
+}
+void problema10(){
+    int a,b=0,c=1,d=1,y=1;
+        cout<<"Ingrese posicion de numero primo : ";
+        cin>>a;
+        while(c<=a)
+        {
+            while(y<=d and b<3)
+            {
+            if(d%y==0)
+               b++;
+            y++;
+            }
+        if(b==2)
+            c++;
+        d++;
+        b = 0;
+        y = 1;
+        }
+    cout<<"El primo numero "<<a<<" es: "<<d-1<<endl;
 }
