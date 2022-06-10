@@ -13,6 +13,12 @@ void problema8();
 void problema9();
 int potencia(int a);
 void problema10();
+void problema12();
+void problema13();
+void problema14();
+bool palindro(int a);
+void problema15();
+void problema17();
 
 int main()
 {
@@ -24,8 +30,13 @@ int main()
     problema6();
     problema7();
     problema8();
-    problema9();*/
+    problema9();
     problema10();
+    problema12();
+    problema13();
+    problema14();
+    problema15();*/
+    problema17();
     return 0;
 }
 void problema1(){
@@ -199,8 +210,8 @@ unsigned long long int factorial(int a){
     if(a==0)
         return 1;
     else{
-        for(a;a>0;a--){
-            g*=a;
+        for(int b=a;b>0;b--){
+            g*=b;
         }
         return g;
     }
@@ -298,3 +309,120 @@ void problema10(){
         }
     cout<<"El primo numero "<<a<<" es: "<<d-1<<endl;
 }
+void problema12(){
+    int a,b=0,c=0,d=1,y=1;
+    cout<<"Maximo factor primo : ";
+    cin>>a;
+    while(d<=a)
+        {
+        while(y<=d and b<3)
+        {
+            if(d%y==0)
+                b++;
+            y++;
+        }
+        if(b==2)
+        {
+           if(a%d==0)
+           c=d;
+        }
+        d++;
+        b = 0;
+        y = 1;
+        }
+    cout<<"El mayor factor primo de "<<a<<" es: "<<c<<endl;
+}
+void problema13(){
+    int a,b=0,c=0,d=1,y=1;
+    cout<<"Suma de primo : ";
+    cin>>a;
+    while(d<a)
+    {
+       while(y<=d and b<3)
+       {
+          if(d%y==0)
+             b++;
+          y++;
+        }
+        if(b==2)
+           c+=d;
+        d++;
+        b = 0;
+        y = 1;
+    }
+cout<<"El resultado de la suma es : "<<c<<endl;
+}
+void problema14(){
+    int a=100,b=100,c=0,t=0,p=0;
+    int u=0;
+    for(int ji=b;ji<=999;ji++){
+        for(int y=a;y<=999;y++){
+            u=y*ji;
+            if(palindro(u) and u>c){
+                c=u;
+                t=y;
+                p=ji;
+            }
+        }
+    }
+    cout<<t<<"*"<<p<<"="<<c<<endl;
+}
+bool palindro(int a){
+    int c=10000;
+    while(c<a){
+        c*=10;
+    }
+    c/=10;
+    int y=0;
+    int h=a;
+    int j=0;
+    for(int v=c,u=1;v>=1;v/=10,u*=10){
+        j=h/v;
+        h-=j*v;
+        y+=j*u;
+    }
+    if(y==a)
+        return true;
+    else
+        return false;
+}
+void problema15(){
+    int n,a=2,b,c=1,d=0,f;
+    cout<<"Ingrese numero impar : ";
+    cin>>n;
+    f=n;
+    while(f>=3)
+    {
+        b=1;
+        while(b<=4)
+        {
+            d+=c;
+            c+=a;
+            b++;
+        }
+    f-=2;
+    a+=2;
+    }
+    d+=c;
+    cout<<"En una espiral "<<n<<"x"<<n<<", La suma es : "<<d<<endl;
+}
+void problema17(){
+    int a,b=0,c=0,d=0,n=1;
+    cout<<"Ingrese numero : ";
+    cin>>a;
+    while(d<=a)
+    {
+        d=0;
+        b=1;
+        c=n*(n+1)/2;
+        while(b<=c)
+        {
+            if(c%b==0)
+                d++;
+            b++;
+        }
+        n++;
+    }
+cout<<"El numero es: "<<c<<" y tiene "<<d<<" divisores"<<endl;
+}
+
