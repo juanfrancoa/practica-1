@@ -19,6 +19,9 @@ void problema14();
 bool palindro(int a);
 void problema15();
 void problema17();
+void problema11();
+int primo(int a);
+void problema16();
 
 int main()
 {
@@ -35,8 +38,10 @@ int main()
     problema12();
     problema13();
     problema14();
-    problema15();*/
+    problema15();
     problema17();
+    problema11();*/
+    problema16();
     return 0;
 }
 void problema1(){
@@ -425,4 +430,81 @@ void problema17(){
     }
 cout<<"El numero es: "<<c<<" y tiene "<<d<<" divisores"<<endl;
 }
+void problema11(){
+    int a=1,b=1,c=1,d=1,y=1;int h,k;
+    cout<<"Ingrese numero entero positivo: ";
+    cin>>h;
+    k=h;
+    while(h>1){
 
+        if(h%primo(b)==0){
+            h/=primo(b);
+        }
+        else{
+            b++;
+            if(h%primo(b)==0){
+                h/=primo(b);
+            }
+        }
+        if(k!=h){
+            k=h;
+
+            cout<<b<<endl;
+        }
+    }
+}
+int primo(int a){
+    int b=0,c=1,d=1,y=1;
+        while(c<=a)
+        {
+            while(y<=d and b<3)
+            {
+            if(d%y==0)
+               b++;
+            y++;
+            }
+        if(b==2)
+            c++;
+        d++;
+        b = 0;
+        y = 1;
+        }
+    d--;
+    return d;
+}
+void problema16(){
+    int a,b,c=1,d=1,e;
+    cout<<"Ingrese numero entero positivo mayor a uno: ";
+    cin>>a;
+    b=a-1;
+
+    for(int i=b;i>1;i--){
+        b=i;
+    while(b>1){
+        if(b%2==0){
+            b/=2;
+        }
+        else{
+            b=3*b+1;
+        }
+        c++;
+    }
+    if(d<c){
+        e=i;
+        d=c;
+    }
+    c=1;
+   }
+   cout<<"La serie mas larga es con la semilla: "<<e<<", teniendo "<<d<<" terminos."<<endl;
+   cout<<"Para la semilla: "<<e<<" : "<<e;
+   while(e>1){
+       if(e%2==0){
+           e/=2;
+       }
+       else{
+           e=3*e+1;
+       }
+       cout<<", "<<e;
+   }
+   cout<<endl;
+}
